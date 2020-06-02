@@ -1,7 +1,7 @@
 # Movie Recommendation Software
- ### Predicts best possible movie choices based on your previous movie likings.
+ #### Predicts best possible movie choices based on your previous movie likings.
  
- ### Works on the TasteDive and OMDB API.
+ #### Works on the TasteDive and OMDB API.
 
 ## Steps to run
 1. #### Run Movie-Recommendation.py

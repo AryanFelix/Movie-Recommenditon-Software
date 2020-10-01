@@ -1,12 +1,18 @@
 import json
 import requests
+import os
+from dotenv import load_dotenv
+
+tdkey = os.getenv("TASTEDIVE_KEY")
+omdbkey = os.getenv("OMDB_KEY")
+
 def get_movies_from_tastedive(s):
     baseurl = "https://tastedive.com/api/similar"
     paramlist = {}
     paramlist["q"] = s
     paramlist["type"] = "movies"
     paramlist["limit"] = 5
-    #paramlist["k"] = "Your Key Here" - Optional
+    paramlist["k"] = tdkey
     result = requests.get(baseurl, params = paramlist)
     result = result.json()
     return result
@@ -35,7 +41,7 @@ def get_movie_data(s):
     paramlist = {}
     paramlist["t"] = s
     paramlist["r"] = "json"
-    #paramlist["apikey"] = "Your Key Here" - Optional
+    paramlist["apikey"] = omdbkey
     result = requests.get(baseurl, params = paramlist)
     result = result.json()
     return result
